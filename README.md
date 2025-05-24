@@ -21,4 +21,4 @@ It takes any input string and returns a clean version with all punctuation chara
 
 **Output:**
 
--Hello there Welcome to my project Remove Punctuation Easily Isnt it cool
+- Hello there Welcome to my project Remove Punctuation Easily Isnt it cool
