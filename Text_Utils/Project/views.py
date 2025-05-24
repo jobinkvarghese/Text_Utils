@@ -10,16 +10,26 @@ def analyze(request):
        context=None
        if request.method=='GET':
               textname=request.GET.get('textname')
-              removep=request.GET.get('removep')
+              convert=request.GET.get('convert')
               puchtuation='!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~'
               analyze=""
-              if removep=='on':
+              if convert=='remove':
                 for chr in textname:
                         if chr not in puchtuation:
                                 analyze+=chr
-                context={
-                       'data':analyze
-                }
-                
-            
-       return render(request,'website/analyze.html',context)
+                data={'data':analyze}
+              elif convert=='convertU':
+                     for chr in textname:
+                        if chr not in puchtuation:
+                                analyze+=chr
+                     value=analyze.upper()
+                     data={ "data":value}
+              elif convert=='convertL':
+                     for chr in textname:
+                        if chr not in puchtuation:
+                                analyze+=chr
+                     value=analyze.lower()
+                     data={ "data":value}
+              else:
+                     return HttpResponse("Please Input Some Data")
+              return render(request,'website/analyze.html',data)

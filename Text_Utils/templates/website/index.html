@@ -9,12 +9,21 @@
 
 <div class="container">
     <form action="analyze/" method="GET" enctype="multipart/form-data">
-        <label for="text">Enter Text Here:</label>
+        <label for="text" r>Enter Text Here:</label>
         <br>
-        <textarea name="textname" id="text" style="width: 339px; height: 141px;"></textarea>
+        <textarea name="textname" id="text"  style="width: 339px; height: 141px;" required></textarea>
         <br>
+                
+        <input type="radio" name="convert" value="remove" id="rev">
         <label for="rev">Remove Puchtuation</label>
-        <input type="checkbox" name="removep" id="rev">
+        <br>
+       
+        <input type="radio" name="convert" value="convertU" id="rev">
+         <label for="rev">Convert to UpperCase</label>
+        <br>
+      
+        <input type="radio" name="convert" value="convertL" id="rev">
+          <label for="rev">Convert to LowerCase</label>
         <br>
         <button type="submit">Submit</button>
     </form>
